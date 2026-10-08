@@ -1,0 +1,24 @@
+services:
+  backend:
+    environment:
+      XYQ_CORS_ORIGINS: https://${YINGXU_DOMAIN:?请设置已解析到服务器的域名}
+      YINGXU_SECURE_COOKIES: "1"
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      YINGXU_DOMAIN: ${YINGXU_DOMAIN:?请设置域名}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - tls_data:/data
+      - tls_config:/config
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  tls_data:
+  tls_config:

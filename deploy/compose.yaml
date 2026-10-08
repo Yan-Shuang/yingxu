@@ -1,0 +1,46 @@
+name: yingxu
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend.Dockerfile
+    environment:
+      XYQ_CORS_ORIGINS: ${YINGXU_ORIGIN:-http://localhost:3000}
+      YINGXU_SECURE_COOKIES: ${YINGXU_SECURE_COOKIES:-0}
+      YINGXU_UPLOAD_QUOTA_MB: ${YINGXU_UPLOAD_QUOTA_MB:-2048}
+      YINGXU_DAILY_GENERATIONS: ${YINGXU_DAILY_GENERATIONS:-20}
+    volumes:
+      - creative_data:/app/backend/code
+      - uploaded_media:/app/backend/temp
+      - model_config:/app/backend/runtime
+      - operator_logs:/app/backend/logs
+    restart: unless-stopped
+    init: true
+    healthcheck:
+      test: [CMD, /app/backend/.venv/bin/python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/frontend.Dockerfile
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${YINGXU_BIND:-127.0.0.1}:3000:3000"
+    environment:
+      BACKEND_API_URL: http://backend:8000
+    restart: unless-stopped
+    init: true
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+volumes:
+  creative_data:
+  uploaded_media:
+  model_config:
+  operator_logs:
