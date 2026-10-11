@@ -120,7 +120,7 @@ if __name__ == "__main__":
     if not api_key:
         print("✗ GEMINI_API_KEY 未设置，跳过")
         sys.exit(1)
-    print(f"  API Key: {api_key[:6]}***")
+    print("  API Key: configured")
     print(f"  Base URL: {base_url}")
     client = Gemini(api_key=api_key, base_url=base_url)
     prompt = "用一句话介绍你自己。"

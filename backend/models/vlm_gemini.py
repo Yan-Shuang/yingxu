@@ -146,7 +146,7 @@ if __name__ == "__main__":
     if not api_key:
         print("✗ GEMINI_API_KEY 未设置，跳过")
         sys.exit(1)
-    print(f"  API Key: {api_key[:6]}***")
+    print("  API Key: configured")
     client = GeminiVLClient(api_key=api_key)
 
     # 测试图片（使用示例图片）

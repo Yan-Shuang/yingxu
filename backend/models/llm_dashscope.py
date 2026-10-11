@@ -132,7 +132,7 @@ if __name__ == "__main__":
     if not api_key:
         print("✗ DASHSCOPE_API_KEY 未设置，跳过")
         sys.exit(1)
-    print(f"  API Key: {api_key[:6]}***{api_key[-4:]}")
+    print("  API Key: configured")
 
     client = QwenLLM(api_key=api_key)
     prompt = "用一句话介绍你自己。"

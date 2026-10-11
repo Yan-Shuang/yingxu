@@ -260,7 +260,7 @@ if __name__ == "__main__":
     if not api_key:
         print("✗ ARK_API_KEY 未设置，跳过")
         sys.exit(1)
-    print(f"  API Key: {api_key[:6]}***{api_key[-4:]}")
+    print("  API Key: configured")
     print(f"  Base URL: {base_url}")
 
     client = SeedreamClient(api_key=api_key, base_url=base_url)

@@ -209,7 +209,7 @@ if __name__ == "__main__":
         print(f"✗ 输入图片不存在: {IMAGE_PATH}")
         sys.exit(1)
 
-    print(f"  API Key    : {api_key[:6]}***{api_key[-4:]}")
+    print("  API Key    : configured")
     print(f"  Base URL   : {base_url}")
 
     for model in MODELS:

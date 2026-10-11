@@ -127,6 +127,8 @@ backend/.venv/bin/python scripts/test_proxy.py
 
 界面截图：`docs/yingxu-fresh-home.png`、`docs/yingxu-fresh-register.png`、`docs/yingxu-fresh-review-fixture.png`。后者使用示例素材与模拟作品数据展示组件布局，不代表实际生成成果。
 
+公开的 [只读样例演示](https://yan-shuang.github.io/yingxu/) 位于 `docs/`。演示只展示工作流和界面结构，使用虚构项目与几何占位画面；它不提供注册、上传或真实生成，不连接模型服务，也不会产生模型调用费用。
+
 ## 来源与许可
 
 核心源码来自 `xiaoyunque-main.zip` 中的 `xiaoyunque/xiaoyunque/`。没有带入随包的私人配置、历史生成数据、缓存或 Agent 指令文件。原说明保存在 `docs/UPSTREAM_README.md`，其中路径属于上游工程。

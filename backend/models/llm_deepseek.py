@@ -175,7 +175,7 @@ if __name__ == "__main__":
     if not api_key:
         print("✗ DEEPSEEK_API_KEY 未设置，跳过")
         sys.exit(1)
-    print(f"  API Key: {api_key[:6]}***{api_key[-4:]}")
+    print("  API Key: configured")
     if base_url:
         print(f"  Base URL: {base_url}")
 

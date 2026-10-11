@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="映序 YINGXU 只读样例演示，不注册、不上传、不调用付费生成服务。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>映序 · YINGXU｜只读样例演示</title>
+  <link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+  <a class="skip" href="#workspace">跳到样例作品</a>
+  <header>
+    <a class="logo" href="./"><span>映</span> 映序 · YINGXU</a>
+    <div class="header-actions"><span class="mode">只读样例模式</span><a href="https://github.com/Yan-Shuang/yingxu">查看源码 ↗</a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI VISUAL WORKFLOW · READ-ONLY SAMPLE</p>
+        <h1>让灵感，沿着<br><em>清晰的序列</em>成为影像。</h1>
+        <p class="lead">从叙事拆解、人物与场景参考，到分镜和片段编排。这里展示映序的工作流与界面结构。</p>
+        <a class="primary" href="#workspace">查看样例工作流</a>
+      </div>
+      <div class="orb" aria-hidden="true"><i></i><b>Y</b><span>01 / 04</span></div>
+    </section>
+
+    <section class="notice" role="note">
+      <strong>这是只读样例，不是真实生成结果</strong>
+      <p>所有人物、项目、提示与进度均为虚构示例。本站不提供注册、上传或生成，不连接模型服务，也不会产生调用费用。</p>
+    </section>
+
+    <section class="workspace" id="workspace" aria-labelledby="workspace-title">
+      <aside>
+        <p class="eyebrow">SAMPLE PROJECT</p>
+        <h2 id="workspace-title">潮汐博物馆</h2>
+        <p>一名记录城市记忆的档案员，在退潮后出现的建筑中寻找一段被抹去的声音。</p>
+        <nav aria-label="样例阶段">
+          <button class="active" data-stage="story"><span>01</span>叙事拆解</button>
+          <button data-stage="character"><span>02</span>人物参考</button>
+          <button data-stage="shots"><span>03</span>分镜编排</button>
+          <button data-stage="timeline"><span>04</span>片段时间线</button>
+        </nav>
+      </aside>
+      <div class="canvas" id="canvas" aria-live="polite"></div>
+    </section>
+
+    <section class="principles">
+      <article><b>可追踪</b><p>每次选择回到明确阶段，保留输入、版本和审核位置。</p></article>
+      <article><b>人来把关</b><p>生成只是候选，人物、场景、分镜和片段都留出人工确认。</p></article>
+      <article><b>公开边界</b><p>样例站与真实服务隔离，没有账号数据、用户素材或模型密钥。</p></article>
+    </section>
+  </main>
+  <footer><span>映序 · YINGXU</span><span>Read-only public sample · 2026</span></footer>
+  <script src="./demo.js" defer></script>
+</body>
+</html>
